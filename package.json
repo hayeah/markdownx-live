@@ -1,0 +1,23 @@
+{
+  "name": "markdownx-live",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "chokidar": "^1.4.2",
+    "express": "^4.13.4",
+    "express-promise-router": "^1.0.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "sockjs": "^0.3.15",
+    "sockjs-client": "^1.0.3",
+    "markdownx": "*"
+  }
+}
