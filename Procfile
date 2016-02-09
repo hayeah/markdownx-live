@@ -1,4 +1,2 @@
-
-client-qpack: qpack server client -f http://localhost:9876
-server-qpack: qpack build server --target=node --watch
-server: nodemon build/server.js example.md
+qpack: qpack build cli@node server-sandbox@node client --port=8000 --server --forward http://localhost:9876
+server: nodemon build/server-sandbox.js example.md

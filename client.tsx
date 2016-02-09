@@ -5,7 +5,7 @@ const ReactDOM = require("react-dom");
 let SockJS = require("sockjs-client");
 
 function connect() {
-  let sockjs = new SockJS('http://localhost:9876/live');
+  let sockjs = new SockJS('/live');
 
   sockjs.onopen = () => {
     console.log('[*] open', sockjs.protocol);
@@ -19,7 +19,7 @@ function connect() {
   sockjs.onclose = function() {
     console.log('[*] close');
     setTimeout(() => {
-      console.log("reconnecting sockjs..");
+      console.log("reconnecting sockjs.");
       connect();
     }, 2000);
   };
@@ -36,11 +36,7 @@ function loadMarkdown(src: string) {
 }
 
 function main() {
-  console.log("hello");
-
   connect();
-
-  // loadMarkdown();
 }
 
 window.addEventListener("load", main);

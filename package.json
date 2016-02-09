@@ -6,18 +6,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "mdx-live": "bin/cli.js",
+    "markdownx-live": "bin/cli.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "chokidar": "^1.4.2",
+    "detect-port": "^0.1.4",
     "express": "^4.13.4",
     "express-promise-router": "^1.0.0",
+    "markdownx": "*",
+    "opn": "^4.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "sockjs": "^0.3.15",
     "sockjs-client": "^1.0.3",
-    "markdownx": "*"
+    "yargs": "^3.32.0"
   }
 }
