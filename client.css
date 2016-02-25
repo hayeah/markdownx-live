@@ -1,0 +1,17 @@
+@import "~normalize.css";
+@import "./css/skeleton.css";
+
+/* Customizations */
+
+ul {
+  list-style: circle outside; }
+ol {
+  list-style: decimal outside; }
+
+ul ul li {
+  margin-bottom: 0.2em;
+}
+
+ul ul {
+  margin-top: 0em;
+}

@@ -1,3 +1,5 @@
+import "./client.css";
+
 import * as React from "react";
 
 const ReactDOM = require("react-dom");
@@ -25,14 +27,44 @@ function connect() {
   };
 }
 
+import * as ast from "markdownx-ast/ast";
+
 import App from "./view/App";
 import markdownx from "markdownx";
 
-const {parse, render: renderMarkdownX} = markdownx({});
+interface CustomComponentProps {
+  content: {
+    sections: ast.Section[],
+    renderMarkdown: Function,
+  };
+}
+
+function Bar(props: CustomComponentProps) {
+  const {sections, renderMarkdown} = props.content;
+
+  const content = renderMarkdown(sections[0].children);
+
+  return (
+    <div>
+      <h3>the bar component</h3>
+      {content}
+    </div>
+  );
+}
+
+const mdx = markdownx({
+  Bar,
+});
 
 function loadMarkdown(src: string) {
-  let doc = renderMarkdownX(parse(src));
-  ReactDOM.render(doc, document.querySelector("#react-root"));
+  const doc = mdx.renderReact(mdx.parse(src));
+
+  const top = (
+    <div className="container">
+      {doc}
+    </div>
+  );
+  ReactDOM.render(top, document.querySelector("#react-root"));
 }
 
 function main() {

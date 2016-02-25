@@ -20,6 +20,7 @@
     "express": "^4.13.4",
     "express-promise-router": "^1.0.0",
     "markdownx": "*",
+    "normalize.css": "^3.0.3",
     "opn": "^4.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",

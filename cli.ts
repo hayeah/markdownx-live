@@ -32,20 +32,11 @@ async function main() {
   const markdownFile = argv._[0];
 
   try {
-    let port = await getPort(argv);
+    const port = await getPort(argv);
 
-    let app = startServer(markdownFile, port);
+    console.log(`Listening at ${port}`);
 
-    app.listen(port, (err) => {
-      if(err) {
-        exitError(err);
-      }
-
-      opn(`http://localhost:${port}`);
-
-      console.log("Server listening on", port);
-
-    });
+    startServer(markdownFile, port);
   } catch(err) {
     exitError(err);
   }
